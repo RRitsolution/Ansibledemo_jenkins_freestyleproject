@@ -18,6 +18,7 @@ resource "aws_instance" "ram" {
 #### After provision now will create inventory.ini ###
      provisioner "local-exec" {
         command = <<EOT
+       export ANSIBLE_HOST_KEY_CHECKING=False
        echo "[webserver]">/var/lib/jenkins/workspace/Ansible_CICD/inventory.ini
        echo "${self.public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/workspace/Ansible_CICD/devops1.pem" >> /var/lib/jenkins/workspace/Ansible_CICD/inventory.ini
        sleep 60
