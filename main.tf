@@ -18,10 +18,9 @@ resource "aws_instance" "demo" {
 #### After provision now will create inventory.ini ###
      provisioner "local-exec" {
         command = <<EOT
-       echo "[webserver]">/home/vm/terraform/inventory.ini
-       echo "${self.public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=/home/vm/terraform/devops1.pem" >> /home/vm/terraform/inventory.ini
+       echo "[webserver]">/var/lib/jenkins/workspace/Jenkins Ansible_CICD/inventory.ini
+       echo "${self.public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/workspace/Jenkins Ansible_CICD/devops1.pem" >> /var/lib/jenkins/workspace/Jenkins Ansible_CICD/inventory.ini
        sleep 60
-       ansible-playbook /home/vm/terraform/playbook.yaml -i /home/vm/terraform/inventory.ini
        echo "Ansible & Terraform successfully run"        
        EOT 
      }
