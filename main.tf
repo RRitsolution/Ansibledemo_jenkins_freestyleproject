@@ -6,7 +6,7 @@ region = "ap-south-1"
 }
 
 ## Provision of EC2 server##
-resource "aws_instance" "demo" {
+resource "aws_instance" "ram" {
 
     instance_type = "t2.micro"
     ami = "ami-0f918f7e67a3323f0"
