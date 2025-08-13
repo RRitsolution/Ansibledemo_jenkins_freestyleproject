@@ -21,7 +21,7 @@ resource "aws_instance" "ram" {
        echo "[webserver]">/var/lib/jenkins/workspace/Ansible_CICD/inventory.ini
        echo "${self.public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/workspace/Ansible_CICD/devops1.pem" >> /var/lib/jenkins/workspace/Ansible_CICD/inventory.ini
        sleep 60
-       ansible-playbook /var/lib/workspace/jenkins/Ansible_CICD/playbook.yaml -i /var/lib/jenkins/workspace/Ansible_CICD/inventory.ini 
+       ansible-playbook /var/lib/jenkins/workspace/Ansible_CICD/playbook.yaml -i /var/lib/jenkins/workspace/Ansible_CICD/inventory.ini 
        echo "Ansible & Terraform successfully run"        
        EOT 
      }
