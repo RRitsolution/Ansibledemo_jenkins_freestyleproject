@@ -1,0 +1,15 @@
+---
+- name: Install httpd package
+  hosts: webserver
+  become: yes
+  tasks:
+   - name: install httpd 
+     apt:
+       name: apache2
+       state: present
+       update_cache: yes
+   - name: start  httpd 
+     service:
+       name: apache2 
+       state: started 
+       
