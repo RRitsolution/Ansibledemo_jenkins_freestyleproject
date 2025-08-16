@@ -30,7 +30,7 @@ Jenkins, Ansible, and Terraform Installed successfully
 
 Create an Access Key (IAM → Security Credentials) → used by Terraform for authentication.
 
-Create an EC2 Key Pair → required by Terrafotm to create EC2 while selecting Key name & Ansible for SSH into the instance
+Create an EC2 Key Pair → required by Terraform to create EC2 while selecting Key name & Ansible for SSH into the instance
 
 Create a Security Group:
 
