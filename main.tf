@@ -19,8 +19,8 @@ resource "aws_instance" "ram" {
      provisioner "local-exec" {
         command = <<EOT
        
-       echo "[webserver]">/var/lib/jenkins/workspace/Ansible_CICD/inventory.ini
-       echo "${self.public_ip} ansible_user=ubuntu" >> /var/lib/jenkins/workspace/Ansible_CICD/inventory.ini
+       echo "[webserver]">$WORKSPACE/inventory.ini
+       echo "${self.public_ip} ansible_user=ubuntu" >>$WORKSPACE/inventory.ini
        sleep 60
        echo "Terraform successfully run and Inventory created"        
        EOT 
