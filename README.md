@@ -16,10 +16,10 @@ Ansible → Configure required packages on EC2
 
 Use a local server or cloud VM to install Jenkins, Terraform, and Ansible.
 
-Clone this repository and run the provided .sh script to install everything:
+Clone this repository and run the provided JenkinsTerraformAnsbilesetup.sh script to install everything:
 
-chmod 700 setup.sh
-./setup.sh
+chmod 700 JenkinsTerraformAnsbilesetup.sh
+./JenkinsTerraformAnsbilesetup.sh
 
 If successful, you will see:
 
