@@ -1,65 +1,83 @@
-##This repository is for automate of EC2 provision with configure of required packages via CICD concept and run static html website on EC2##
-##Tools used :-
-1- Jenkins for CICD
-2- Terraform for EC2 provision
-3- Ansible for configure required packages on nwely launched EC2
+🚀 EC2 Automation with CI/CD
 
-Execution:-
-Tools Setup on server//// clone this repository and only use .sh extension file to setup tools //
-1-local server or cloud VM where we will install all required tools(Terraform, Ansbile, Jenkins) & start Jenkins.
-  For this already .sh extension file in repository just make this file with your user right permission and execute it .## chmod 700 .sh && ./.sh  ==> It will install all required packages .
-
-  If all good post successfully execution script file then it should be shown on your console //
-
-  
-Jenkins & Ansible and Terraform Installed successfully.
-
-  ##Login to AWS console ##Manual approach##
-   
-  1-1st Create a access-key under (IAM)/Security credentials and download the file------It will be used for terraform to connect AWS authnetication purpose //remember  i created this as my root user logged on AWS
-  2-Then create EC2 key-pair for Ansbile connect with launched EC2 from Terraform to run playbook
-  3-Create a Security group with inbod rule port 22(for SSH) with your system IP where jenkins is running,80(Static HTML website run) with 0.0.0.0/0 only testing purpose//// can be also used default sg but ensure setting
+This repository demonstrates how to automate the provisioning of an AWS EC2 instance, configure required packages, and deploy a static HTML website using a CI/CD pipeline.
 
 
-Jenkins GUI setup//
+🔧 Tools Used
+
+Jenkins → CI/CD pipeline
+
+Terraform → EC2 provisioning
+
+Ansible → Configure required packages on EC2
+
+⚙️ Execution Steps
+1️⃣ Setup Tools on Server
+
+Use a local server or cloud VM to install Jenkins, Terraform, and Ansible.
+
+Clone this repository and run the provided .sh script to install everything:
+
+chmod 700 setup.sh
+./setup.sh
+
+If successful, you will see:
+
+Jenkins, Ansible, and Terraform Installed successfully
 
 
-  1-Open your browser and paste the ip of your server ## 192.3.4.5(for reference):8080
-  2-Need to do setup as usual we do initial setup of user with pass(take the path shown of jenkins page and paste it on server for password) on initial page
-  3-Then install recommanded plugins 
-  
-  Needs to setup of AWS access key id & secret key along with pem file on Jenkins 
+2️⃣ AWS Console (Manual Setup)
 
-  Manage Jnekins==> Credentials
-  then do setup 
+Create an Access Key (IAM → Security Credentials) → used by Terraform for authentication.
 
-  Note- In my case I have used secret text for AWS access & secret and secret file private key file (.pem extension) and attached here  
+Create an EC2 Key Pair → required by Ansible for SSH into the instance.
+
+Create a Security Group:
+
+Port 22 → your local system IP (for SSH)
+
+Port 80 → 0.0.0.0/0 (for website access)
+ 
+
+3️⃣ Jenkins Setup
+
+Access Jenkins at:
+
+http://<your-server-ip>:8080
+
+
+Unlock Jenkins using the initial admin password shown on your server.
+
+Install recommended plugins.
+
+Add AWS credentials under:
+
+Manage Jenkins → Credentials
+
+Use Secret Text for AWS keys and Secret File for .pem key.
 
 <img width="1545" height="441" alt="image" src="https://github.com/user-attachments/assets/ed96461c-e132-4ec7-8a92-c8e829b7f57f" />
 
-Install required plugings:-
+✅ Required plugins: Terraform, Ansible, Pipeline
 
-Manage Jnekins==> Plugins
+Restart Jenkins:
 
-Terraform, Ansible & Pipeline
+http://<your-server-ip>:8080/restart
 
 <img width="940" height="472" alt="image" src="https://github.com/user-attachments/assets/e18fc9f1-1bcf-4ed7-a68f-527719e3ba8a" />
 
 
-Once it is done then restart jenkins server via http://ip of your jenkins server:8080/restart...
+4️⃣ Automate EC2 Provisioning with CI/CD
 
+In Jenkins, create a New Job → Pipeline.
 
-##Automate provision EC2 on AWS and configure required packages along with static website setup on EC2##
+Select Pipeline script from SCM to fetch code from this repository.
 
+Run the pipeline → Terraform provisions EC2, and Ansible configures it.
 
-Now moving to automate vm provision on AWS and configure the packages .
+After a successful build, copy the Public IP of the EC2 instance.
 
-since in step-1 already clone the repository so you should have all the setup files . but for jenkins cicd pipelin need to create a Job with pipeline so again all codes from scm will download to your workspace .
-
-1-Create a new Job with pipe line .
-2-Pipeline script from scm and save it .
-3-Now click on build and if all are good then after successfully pipeline run 
-you will be able to see like this-
+Open the IP in your browser → Static HTML website should be visible 🎉
 
 <img width="602" height="47" alt="image" src="https://github.com/user-attachments/assets/6731b74e-9c54-41b6-8095-1903ab96c7ef" />
 
