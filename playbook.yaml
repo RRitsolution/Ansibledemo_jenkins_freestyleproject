@@ -18,17 +18,13 @@
       name: apache2
       state: present
       update_cache: yes
+   - name: Copy index.html file
+     copy:
+       src: '/$WORKSPACE/index.html'
+       dest: '/var/www/html/index.html'
    - name: start  httpd 
      service:
       name: apache2 
       state: started 
-   - name: install Docker 
-     apt:
-      name: docker.io
-      state: present
-      update_cache: yes
-   - name: start  docker 
-     service:
-      name: docker 
-      state: started 
+   
        
