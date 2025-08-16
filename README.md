@@ -58,13 +58,19 @@ Use Secret Text for AWS keys and Secret File for .pem key.
 
 <img width="1545" height="441" alt="image" src="https://github.com/user-attachments/assets/ed96461c-e132-4ec7-8a92-c8e829b7f57f" />
 
+
+
 ✅ Required plugins: Terraform, Ansible, Pipeline
+
+
+
+<img width="940" height="472" alt="image" src="https://github.com/user-attachments/assets/e18fc9f1-1bcf-4ed7-a68f-527719e3ba8a" />
 
 Restart Jenkins:
 
 http://<your-server-ip>:8080/restart
 
-<img width="940" height="472" alt="image" src="https://github.com/user-attachments/assets/e18fc9f1-1bcf-4ed7-a68f-527719e3ba8a" />
+
 
 
 4️⃣ Automate EC2 Provisioning with CI/CD
