@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Janmashtami</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, #ffdd00, #ff8800, #4b0082);
+      background-size: 400% 400%;
+      animation: glowing 12s infinite;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    @keyframes glowing {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px gold;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { box-shadow: 0 0 20px gold; }
+      to { box-shadow: 0 0 40px orange; }
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #ffdd00, 0 0 25px #ff8800;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-top: 0;
+      text-shadow: 0 0 10px #ffcc00;
+    }
+
+    .lights {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .light {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: gold;
+      border-radius: 50%;
+      box-shadow: 0 0 20px gold;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.3; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="lights">
+    <div class="light" style="top: 10%; left: 20%;"></div>
+    <div class="light" style="top: 30%; left: 80%;"></div>
+    <div class="light" style="top: 60%; left: 40%;"></div>
+    <div class="light" style="top: 80%; left: 70%;"></div>
+    <div class="light" style="top: 50%; left: 10%;"></div>
+  </div>
+
+  <div class="container">
+    <h1>🌸 Happy Janmashtami 🌸</h1>
+    <p>May Lord Krishna bring love, light, and happiness in your life!</p>
+  </div>
+</body>
+</html>
