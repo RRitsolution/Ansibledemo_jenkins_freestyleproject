@@ -96,7 +96,7 @@ Open the IP in your browser → Static HTML website should be visible 🎉
 
 
 
-##########################3
+##########################
 
 Thanks !
 
