@@ -81,13 +81,15 @@ Select Pipeline script from SCM to fetch code from this repository.
 
 Run the pipeline → Terraform provisions EC2, and Ansible configures it.
 
-After a successful build, copy the Public IP of the EC2 instance.
-
-Open the IP in your browser → Static HTML website should be visible 🎉
-
 <img width="602" height="47" alt="image" src="https://github.com/user-attachments/assets/6731b74e-9c54-41b6-8095-1903ab96c7ef" />
 
+
+
+After a successful build, copy the Public IP of the EC2 instance.
+
 take the public ip of newly ec2 and open it on browser to see your static website .
+
+Open the IP in your browser → Static HTML website should be visible 🎉
 
 <img width="959" height="478" alt="image" src="https://github.com/user-attachments/assets/0166922d-bfd5-4723-bc89-86351f682aca" />
 
