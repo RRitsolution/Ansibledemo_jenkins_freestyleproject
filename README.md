@@ -57,7 +57,25 @@ Now moving to automate vm provision on AWS and configure the packages .
 since in step-1 already clone the repository so you should have all the setup files . but for jenkins cicd pipelin need to create a Job with pipeline so again all codes from scm will download to your workspace .
 
 1-Create a new Job with pipe line .
-2-
+2-Pipeline script from scm and save it .
+3-Now click on build and if all are good then after successfully pipeline run 
+you will be able to see like this-
+
+<img width="602" height="47" alt="image" src="https://github.com/user-attachments/assets/6731b74e-9c54-41b6-8095-1903ab96c7ef" />
+
+take the public ip of newly ec2 and open it on browser to see your static website .
+
+<img width="959" height="478" alt="image" src="https://github.com/user-attachments/assets/0166922d-bfd5-4723-bc89-86351f682aca" />
+
+
+
+
+##########################3
+
+Thanks !
+
+
+
 
 
 
